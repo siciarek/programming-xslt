@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="ispalindrome-template.xsl"?>
+<args>
+    <phrase>SATOR AREPO TENET OPERA ROTAS</phrase>
+    <phrase>ALA MA KOTA</phrase>
+</args>

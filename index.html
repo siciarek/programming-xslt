@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>XSLT Fractals</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="language" content="en" />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/css/main.css" />
+
+<script type="text/javascript">
+	function show_fractal(name, direct) {
+		
+		direct = direct || false;
+		
+		if(direct == true)
+		{
+			var console = document.getElementById('console');
+			console.src = name;
+		}
+		else
+		{
+			show_in_console(name, 'fractals');
+		}
+	}
+
+	function show_function(name) {
+		show_in_console(name, 'recursion');
+	}
+
+	function show_animation(name) {
+		var console = document.getElementById('console');
+		var img = '/images/' + name + '/animation.gif';
+		console.src = img;
+	}
+
+	function show_in_console(name, directory) {
+		var console = document.getElementById('console');
+		console.src = '/wait.html';
+		setTimeout(function(){console.src = '/' + directory + '/' + name + '.xml';}, 500);
+		
+	}
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+
+		<ul class="menu">
+			<li><a href="/index.html">Fractals</a></li>
+			<li><a href="/recursion.html">Recursion in Action</a></li>
+		</ul>
+
+		<h2>2D Fractals in SVG format</h2>
+
+		<div>
+			<div id="left-panel">
+				<ol reversed="reversed" class="functions">
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/quadratic-koch-island-1')">L-Systems Quadratic Koch Island 1</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/quadratic-koch-island-2')">L-Systems Quadratic Koch Island 2</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/island-lake-combo')">L-Systems Island Lake Combo</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-a')">L-Systems Koch Curve A</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-b')">L-Systems Koch Curve B</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-c')">L-Systems Koch Curve C</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-d')">L-Systems Koch Curve D</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-e')">L-Systems Koch Curve E</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/koch-curve-f')">L-Systems Koch Curve F</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/mod-of-snowflake')">L-Systems Mod of snowflake</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/dragon-curve')">L-Systems Dragon curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/hexagonal-gosper-curve')">L-Systems Hexagonal Gosper curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/quadratic-gosper-curve')">L-Systems Quadratic Gosper curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/e-curve')">L-Systems Quadratic E-curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/sierpinski-arrowhead')">L-Systems Sierpinski arrowhead</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/peano-curve')">L-Systems Peano curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/hilbert-curve')">L-Systems Hilbert curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/approx-of-sierpinski')">L-Systems Approx of Sierpinski</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-a')">L-Systems Tree A</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-b')">L-Systems Tree B</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-c')">L-Systems Tree C</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-d')">L-Systems Tree D</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-e')">L-Systems Tree E</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-f')">L-Systems Tree F</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/tree-g')">L-Systems Tree G</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/spiral-tiling')">L-Systems Spiral tiling</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/bspline-triangle')">L-Systems BSpline triangle</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/snake-kolam')">L-Systems Snake Kolam</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/anklets-of-krishna')">L-Systems Anklets of Krishna</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/penrose-tiling')">L-Systems Penrose tiling</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lsystem/spiral-curve')">L-Systems Spiral curve</a> <a class="info"
+						href="http://algorithmicbotany.org/papers/abop/abop.pdf" target="_blank">INFO</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('chaos-game-hexagon')">Chaos game (hexagon)</a> <a class="info"
+						href="http://www.robertdickau.com/chaos_game.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('chaos-game-hexagon')">anim</a> -->
+					</li>
+					
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('chaos-game-pentagon')">Chaos game (pentagon)</a> <a class="info"
+						href="http://www.robertdickau.com/chaos_game.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('chaos-game-pentagon')">anim</a> -->
+					</li>
+					
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('chaos-game-square')">Chaos game (square)</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Chaos_game" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('chaos-game-square')">anim</a> -->
+					</li>
+					
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('chaos-game-triangle')">Chaos game (triangle)</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Chaos_game" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)" onclick="show_animation('chaos-game-triangle')">anim</a>
+					</li>
+
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lozi-attractor')">Lozi attractor</a> <a class="info"
+						href="http://www.robertdickau.com/lozi.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('lozi-attractor')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('cross-fractal')">Cross fractal</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)" onclick="show_animation('cross-fractal')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('grate')">Grate</a> <a class="info"
+						href="http://www.cr31.co.uk/logoarts/pict/gall5/grate.html" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('grate')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('wirth-curve')">Wirth curve</a> <a class="info"
+						href="http://www.cr31.co.uk/logoarts/pict/gall5/wirth.html" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('wirth-curve')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('root')">Root</a> <a class="info"
+						href="http://www.karlin.mff.cuni.cz/~pyrih/e/e2001v1/c/ect/node72.html#Root" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('root')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('makuchowski-umbrella')">Makuchowski umbrella</a> <a class="info"
+						href="http://www.karlin.mff.cuni.cz/~pyrih/e/e2001v1/c/ect/node89.html#Makuchowski_Umbrella" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('makuchowski-umbrella')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('devils-staircase')">Devilʼs staircase</a> <a class="info"
+						href="http://www.mathcurve.com/fractals/escalierdudiable/escalierdudiable.shtml" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('devils-staircase')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('polya-curve')">Polya curve</a> <a class="info"
+						href="http://www.mathcurve.com/fractals/polya/polya.shtml" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('polya-curve')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('gehman-dendrite')">Gehman dendrite</a> <a class="info"
+						href="http://www.karlin.mff.cuni.cz/~pyrih/e/e2001v1/c/ect/node78.html" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('gehman-dendrite')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('gosper-island')">Gosper island</a> <a class="info"
+						href="http://library.thinkquest.org/26242/full/fm/fm11.html" target="_blank">INFO</a>
+ 						<a class="info" href="javascript:void(null)" onclick="show_animation('gosper-island')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('lorenz-attractor')">Lorenz attractor (x-z)</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Lorenz_attractor" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('lorenz-attractor')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('rossler-attractor')">Rössler attractor</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Rössler_attractor" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('rossler-attractor')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('henon-map')">Hénon map</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Hénon_map" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)" onclick="show_animation('henon-map')">anim</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('minkowski-sausage')">Minkowski sausage</a> <a class="info"
+						href="http://mathworld.wolfram.com/MinkowskiSausage.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('minkowski-sausage')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('ice-fractal-triangle')">Ice fractal (triangle)</a> <a class="info"
+						href="http://mathworld.wolfram.com/IceFractal.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('ice-fractal-triangle')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('ice-fractal-antitriangle')">Ice fractal (antitriangle)</a> <a class="info"
+						href="http://mathworld.wolfram.com/IceFractal.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('ice-fractal-antitriangle')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('ice-fractal-square')">Ice fractal (square)</a> <a class="info"
+						href="http://mathworld.wolfram.com/IceFractal.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('ice-fractal-square')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('ice-fractal-antisquare')">Ice fractal (antisquare)</a> <a class="info"
+						href="http://mathworld.wolfram.com/IceFractal.html" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" onclick="show_animation('ice-fractal-antisquare')">anim</a> -->
+					</li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('haferman-carpet')">Haferman carpet</a> <a class="info"
+						href="http://mathworld.wolfram.com/HafermanCarpet.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('haferman-carpet')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('blancmange-curve')">Blancmange curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Blancmange_curve" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('blancmange-curve')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('julia-set')">Julia set (San Marco Fractal)</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Julia_set" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" -->
+<!-- 						onclick="show_animation('julia-set')">anim</a> -->
+						</li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('mandelbrot-set')">Mandelbrot set</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Mandelbrot_set" target="_blank">INFO</a>
+<!-- 						<a class="info" href="javascript:void(null)" -->
+<!-- 						onclick="show_animation('mandelbrot-set')">anim</a> -->
+						</li>
+
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('peano-curve')">Peano curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Space-filling_curve" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('peano-curve')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('square-space-filling-tree')">Square space filling tree</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Space-filling_tree" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('square-space-filling-tree')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('triangle-space-filling-tree')">Triangle space filling tree</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Space-filling_tree" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('triangle-space-filling-tree')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('fibonacci-word-fractal')">Fibonacci word fractal (90&deg;)</a> <a class="info"
+						href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">INFO</a>
+						<a class="info" href="images/fibonacci-word-fractal/21.svg" target="_blank">big</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('fibonacci-word-fractal')">anim</a></li>
+
+					<li><a href="fractals/fibonacci-word-fractal-60.xml" target="_blank">Fibonacci word fractal (60&deg;)</a> <a class="info"
+						href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">INFO</a>
+						</li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('koch-quadratic-type-2-curve')">Koch quadratic type 2 curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Koch_curve" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('koch-quadratic-type-2-curve')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('star-fractal-1')">Star fractal I</a> <a class="info"
+						href="http://mathworld.wolfram.com/StarFractal.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('star-fractal-1')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('star-fractal-2')">Star fractal II</a> <a class="info"
+						href="http://mathworld.wolfram.com/StarFractal.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('star-fractal-2')">anim</a></li>
+ 
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('cantor-square-fractal')">Cantor square fractal</a> <a class="info"
+						href="http://mathworld.wolfram.com/CantorSquareFractal.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('cantor-square-fractal')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('t-square-fractal')">T-square fractal</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/T-square_(fractal)" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('t-square-fractal')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('cesaro-fractal')">Cesàro Fractal I</a> <a class="info"
+						href="http://mathworld.wolfram.com/CesaroFractal.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('cesaro-fractal')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('cesaro-fractal-koch')">Cesàro Fractal II</a> <a class="info"
+						href="http://mathworld.wolfram.com/CesaroFractal.html" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('cesaro-fractal-koch')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('greek-cross')">Greek cross</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('greek-cross')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('vicsek-1')">Vicsek fractal I</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Vicsek_fractal" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('vicsek-1')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('vicsek-2')">Vicsek fractal II</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Vicsek_fractal" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('vicsek-2')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('z-order-curve')">Z-order curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Z-order_(curve)" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('z-order-curve')">anim</a></li>
+
+						<li><a href="javascript:void(null)"
+						onclick="show_fractal('hangman')">Hangman</a> <a class="info"
+						href="http://tungnm.com/index.php?ItemID=19" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('hangman')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('pentaflake-1')">Pentaflake I</a> <a
+						class="info" href="http://mathworld.wolfram.com/Pentaflake.html"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('pentaflake-1')">anim</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('pentaflake-2')">Pentaflake II</a> <a
+						class="info" href="http://mathworld.wolfram.com/Pentaflake.html"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('pentaflake-2')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('hexaflake-1')">Hexaflake I</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Hexaflake"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('hexaflake-1')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('hexaflake-2')">Hexaflake II</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Hexaflake"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('hexaflake-2')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('gosper-curve')">Gosper Curve</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Gosper_curve"
+						target="_blank">INFO</a></li>
+					<li><a href="/fractals/golden-spiral.xml" target="_blank">Golden
+							Ratio Spiral</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Golden_ratio" target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('hadamard-matrix')">Hadamard Matrix</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Hadamard_matrix"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('hadamard-matrix')">anim</a></li>
+					<li><a href="/fractals/levy-c-curve.xml" target="_blank">Lévy
+							C curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Lévy_C_curve" target="_blank">INFO</a></li>
+					<li><a href="/fractals/pythagoras-tree-1.xml" target="_blank">Pythagoras
+							tree I</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Pythagoras_tree (fractal)"
+						target="_blank">INFO</a></li>
+					<li><a href="/fractals/pythagoras-tree-2.xml" target="_blank">Pythagoras
+							tree II</a> <a class="info"
+						href="http://library.thinkquest.org/26242/full/types/ch11.html"
+						target="_blank">INFO</a></li>
+					<li><a href="/fractals/dragon-curve.xml" target="_blank">Dragon
+							curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Dragon_curve" target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('minkowski-island')">Minkowski island</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Fractal_antenna"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('minkowski-island')">anim</a></li>
+					<li><a href="/fractals/h-tree.xml" target="_blank">H tree</a>
+						<a class="info" href="http://en.wikipedia.org/wiki/H_tree"
+						target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('two-branches-tree')">Two branches tree</a>
+						<a class="info"
+						href="http://www.math.sunysb.edu/~scott/Book331/Making_tree.html"
+						target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('three-branches-tree')">Three branches
+							tree</a> <a class="info"
+						href="http://www.math.sunysb.edu/~scott/Book331/Making_tree.html"
+						target="_blank">INFO</a></li>
+					<li><a href="/fractals/barnsley-fern.xml" target="_blank">Barnsley
+							fern</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Barnsley_fern" target="_blank">INFO</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('koch-curve')">Koch curve</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Koch_curve" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('koch-curve')">anim</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('koch-quadratic-curve')">Koch quadratic curve</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Koch_curve" target="_blank">INFO</a>
+						<a class="info" href="javascript:void(null)"
+						onclick="show_animation('koch-quadratic-curve')">anim</a></li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('koch-snowflake')">Koch snowflake</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Koch_snowflake" target="_blank">INFO</a>
+<!-- 					    <a class="info" href="javascript:void(null)" onclick="show_animation('koch-snowflake')">anim</a> -->
+					</li>
+
+					<li>
+						<a href="javascript:void(null)"
+						onclick="show_fractal('koch-antisnowflake')">Koch antisnowflake</a> <a class="info"
+						href="http://mathworld.wolfram.com/KochAntisnowflake.html" target="_blank">INFO</a>
+<!-- 					    <a class="info" href="javascript:void(null)" onclick="show_animation('koch-antisnowflake')">anim</a> -->
+					</li>
+					
+					<li><a href="/fractals/cantor-set.xml" target="_blank">Cantor
+							set</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Cantor_set" target="_blank">INFO</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('sierpinski-arrowhead-curve')">Sierpinski arrowhead curve</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Sierpinski_arrowhead_curve"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)"
+						onclick="show_animation('sierpinski-arrowhead-curve')">anim</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('sierpinski-triangle')">Sierpinski triangle</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Sierpinski_triangle"
+						target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('sierpinski-carpet')">Sierpinski
+							carpet</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Sierpinski_carpet"
+						target="_blank">INFO</a></li>
+
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('hilbert-curve')">Hilbert curve</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Hilbert_curve"
+						target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('sierpinski-curve')">Sierpinski curve</a> <a
+						class="info" href="http://en.wikipedia.org/wiki/Sierpinski_curve"
+						target="_blank">INFO</a></li>
+					<li><a href="javascript:void(null)"
+						onclick="show_fractal('w-curve')">(Wirth's) W curve</a> <a
+						class="info"
+						href="http://en.wikipedia.org/wiki/Algorithms_%2B_Data_Structures_%3D_Programs"
+						target="_blank">INFO</a> <a class="info"
+						href="javascript:void(null)" onclick="show_animation('w-curve')">anim</a>
+
+					</li>
+				</ol>
+
+				<h2>3D Fractals in X3D format</h2>
+
+				<ol class="functions">
+					<li>
+						<a href="/fractals/sierpinski-tetrahedron-html.xml"
+						target="_blank">Sierpinski tetrahedron</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Sierpinski_triangle#Analogues_in_higher_dimensions"
+						target="_blank">INFO</a>
+					</li>
+					
+					<li>
+						<a href="/fractals/sierpinski-pyramid-html.xml"
+						target="_blank">Sierpinski pyramid</a> <a class="info"
+						href="http://library.thinkquest.org/26242/full/fm/fm32.html"
+						target="_blank">INFO</a>
+					</li>
+					
+					<li>
+						<a href="/fractals/sierpinski-sponge-html.xml"
+						target="_blank">Sierpinski sponge</a> <a class="info"
+						href="http://en.wikipedia.org/wiki/Menger_sponge" target="_blank">INFO</a>
+					</li>
+				</ol>
+			</div>
+			<div id="right-panel">
+				<iframe id="console"></iframe>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer"><img
+				src="http://www.w3.org/Icons/valid-xhtml10"
+				alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+		</p>
+
+	</div>
+</body>
+</html>

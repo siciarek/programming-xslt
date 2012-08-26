@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="binary-search-template.xsl"?>
+<args>
+    <key>12</key>
+    <a>1,3,5,9,10,12,34,50,100</a>
+</args>
