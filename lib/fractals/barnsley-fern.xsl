@@ -56,7 +56,10 @@
         <xsl:variable name="pixel_x" select="round($x * $xscale + $xoffset)" />
         <xsl:variable name="pixel_y" select="$height - round($y * $yscale)" />
 
-        <xsl:value-of select="concat('M', $pixel_x, ',', $pixel_y, ' ', $pixel_x + 1, ',', $pixel_y + 1, 'Z')" />
+        <xsl:call-template name="draw-pixel">
+            <xsl:with-param name="x" select="$pixel_x" />
+            <xsl:with-param name="y" select="$pixel_y" />
+        </xsl:call-template>
 
         <xsl:if test="$stage &gt; 0 and $tail">
             <xsl:call-template name="barnsley-fern">

@@ -214,7 +214,26 @@
     <xsl:template name="draw-pixel">
         <xsl:param name="x" />
         <xsl:param name="y" />
-        <xsl:value-of select="concat('M', $x, ',', $y, ' ', $x + 1, ',', $y + 1, 'Z')" />
+        <xsl:param name="radius" select="1" />
+
+        <xsl:value-of select="concat('M',
+        $x - $radius, ',', $y,
+        'A', $radius, ',', $radius,
+        ' 0 1,1 ',
+        $x - $radius, ',', ($y - 0.001),
+        'Z')" />
+    </xsl:template>
+    
+    <xsl:template name="xdraw-pixel">
+        <xsl:param name="x" />
+        <xsl:param name="y" />
+
+        <xsl:value-of select="concat('M',
+        $x, ',', $y, ' ',
+        $x + 1, ',', $y, ' ',
+        $x + 1, ',', $y + 1, ' ',
+        $x, ',', $y + 1,
+        'Z')" />
     </xsl:template>
 
     <xsl:template name="pentagram">
@@ -295,9 +314,6 @@
         <xsl:value-of select="'Z'" />
 
     </xsl:template>
-
-
-
 
     <xsl:template name="cross">
 
@@ -458,8 +474,9 @@
 
         <xsl:element name="svg" xmlns="http://www.w3.org/2000/svg">
             <xsl:attribute name="version"><xsl:value-of select="'1.1'" /></xsl:attribute>
-            <xsl:attribute name="width"><xsl:value-of select="$width" /></xsl:attribute>
-            <xsl:attribute name="height"><xsl:value-of select="$height" /></xsl:attribute>
+            <xsl:attribute name="width"><xsl:value-of select="'100%'" /></xsl:attribute>
+            <xsl:attribute name="height"><xsl:value-of select="'100%'" /></xsl:attribute>
+            <xsl:attribute name="viewBox"><xsl:value-of select="concat('0 0 ', $width, ' ', $height)" /></xsl:attribute>
 
             <xsl:if test="$frame = 1">
                 <xsl:element name="rect" xmlns="http://www.w3.org/2000/svg">
